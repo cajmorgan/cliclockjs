@@ -64,7 +64,7 @@ int clockFunc() {
       }
 
       //Hours
-      if((timeref / 3600) % 24 >= 10) {
+      if(localtime(&newSeconds)->tm_hour > 9) {
         sprintf(hours, "%d", localtime(&newSeconds)->tm_hour);
         strcpy(nulhours, hours);
       } else {
